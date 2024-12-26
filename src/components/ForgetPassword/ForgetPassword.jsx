@@ -23,12 +23,6 @@ export default function ForgetPassword() {
       .then((res) => {
         console.log(res.data.statusMsg);
         if (res.data.statusMsg === 'success'){
-            toast.success(response.data.message, {
-                style: {
-                  color: "rgb(1, 133, 76)",
-                  fontWeight: "700",
-                },
-              });
             navigate('/verifyCode')
         }
         

@@ -106,7 +106,7 @@ let routes = createBrowserRouter([
       { path: "signup", element: <Signup /> },
       { path: "forgetPassword", element: <ForgetPassword /> },
       { path: "verifyCode", element: <VerifyCode /> },
-      { path: "resetPassword", element: <ResetPassword /> },
+      { path: "ResetPassword", element: <ResetPassword /> },
       { path: "*", element: <NotFound /> },
     ],
   },
