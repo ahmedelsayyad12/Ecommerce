@@ -84,12 +84,9 @@ export default function Cart() {
       let response = await getCart()
       setCartId(response.data.data._id)
       setCartItems(response.data.data)
-      localStorage.setItem('cartUser', response?.data.data.cartOwner)
-      setCartUser(localStorage.getItem('cartUser'))
       setIsLoading(false)
       
     }
-    console.log(cartUser);
     
    useEffect(() => {
      getCartItems()

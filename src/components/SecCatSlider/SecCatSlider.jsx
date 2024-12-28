@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
 
 export default function SecCatSlider() {
-  const [isClick, setIsClick] = useState(false);
 
   let { categoryName } = useParams();
 

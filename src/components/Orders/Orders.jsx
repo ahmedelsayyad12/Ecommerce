@@ -8,9 +8,9 @@ export default function Orders() {
     let [data , setData] = useState([])
     let [loading , setLoading] = useState(false)
     
+   let {cartUser} =useContext(cartContext)
 
-
-let cartUser = localStorage.getItem('cartUser')
+// let cartUser = localStorage.getItem('cartUser')
 
 function getUserOrders(cartUser){
     setLoading(true)
@@ -27,7 +27,6 @@ function getUserOrders(cartUser){
         })
     }
     
-    console.log(data);
     useEffect(()=>{
         
         getUserOrders(cartUser)
@@ -40,7 +39,7 @@ function getUserOrders(cartUser){
     return (  <>
         <h1 className="text-4xl font-bold py-5">All Orders</h1>
         {orders?.data?.map((order) => (
-                <div className='my-3 border border-gray-300 rounded-md border-solid p-4 bg-white'>
+                <div key={order.id} className='my-3 border border-gray-300 rounded-md border-solid p-4 bg-white'>
                     <div className='flex justify-between items-center'>
                         <div>
                             <h2 className='text-gray-400'>Order ID</h2>

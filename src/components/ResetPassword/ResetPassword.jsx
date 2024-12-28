@@ -20,7 +20,6 @@ async  function handleSubmit(values){
   setLoading(true)
   axios.put('https://ecommerce.routemisr.com/api/v1/auth/resetPassword',values)
   .then((res)=>{
-    console.log(res);
     setLoading(false)
     if (res.status == 200)
       navigate('/')

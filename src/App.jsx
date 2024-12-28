@@ -116,12 +116,12 @@ function App() {
   return (
     <QueryClientProvider client={query}>
       <WishListContextProvider>
-        <CartContextProvider>
-          <UserContextProvider>
+        <UserContextProvider>
+          <CartContextProvider>
             <RouterProvider router={routes}></RouterProvider>
             <Toaster position="top-center" />
-          </UserContextProvider>
-        </CartContextProvider>
+          </CartContextProvider>
+        </UserContextProvider>
       </WishListContextProvider>
     </QueryClientProvider>
   );

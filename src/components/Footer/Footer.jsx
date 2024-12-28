@@ -24,7 +24,7 @@ export default function Footer() {
                     </header>
 
 
-                    <div className="flex max-xs:flex-col items-center gap-2 sm:gap-6">
+                    <div className="flex flex-col md:flex-row max-xs:flex-col items-center gap-2 sm:gap-6">
                         <input
                             type="email"
                             placeholder="Email..."

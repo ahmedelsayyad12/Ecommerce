@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Style from "./Home.module.css";
@@ -9,12 +9,22 @@ import Loading from "../Loading/Loading";
 import CategorySlider from "../CategorySlider/CategorySlider";
 import MainSlider from "../MainSlider/MainSlider";
 import { useQuery } from "react-query";
+import { cartContext } from "../../Context/CartContext";
 
 export default function Home() {
   const [search, setSearch] = useState("");
+  let {cartUser}=useContext(cartContext)
+
+
   let headers = {
     token: localStorage.getItem("userToken"),
   };
+
+  
+
+
+
+
   function getProducts() {
     return axios.get("https://ecommerce.routemisr.com/api/v1/products");
   }
@@ -33,7 +43,6 @@ export default function Home() {
   };
   const filteredData = getFilteredData(search, items);
 
-  console.log(filteredData);
 
   if (isLoading) {
     return <Loading />;

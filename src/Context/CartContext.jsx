@@ -19,13 +19,8 @@ let [cartUser, setCartUser] = useState(null);
                 headers
             }).then((response)=>{
                 setCartId(response?.data.data._id)
-                
+                setCartUser(response?.data?.data?.cartOwner)
                 setNumOfCartItems(response.data.numOfCartItems)
-                // console.log(cartId);
-                // console.log(numOfCartItems);
-                
-                // console.log(response?.data.data.cartOwner);
-                
                 return response
             })
             .catch((error)=>error)
@@ -64,7 +59,9 @@ let [cartUser, setCartUser] = useState(null);
     function clearCart() {
         return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart`,{
                 headers
-            }).then((response)=>response)
+            }).then((response)=>{
+                setNumOfCartItems(response.data.numOfCartItems)
+                return response})
                 .catch((error)=>error)
     }
     function checkOut(cartId , url , formValue) {
@@ -79,7 +76,6 @@ let [cartUser, setCartUser] = useState(null);
     }
 
     useEffect(()=>{
-        setCartUser(localStorage.getItem('cartUser'))
         getCart()
     },[numOfCartItems])
 return <cartContext.Provider value={ {getCart ,setCartId,numOfCartItems, addProductToCart ,updateCartItemCount , deletedCartItem , clearCart , checkOut ,cartId , cartUser , setCartUser} }> 

@@ -17,7 +17,6 @@ export default function VerifyCode() {
     axios
       .post("https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode", values)
       .then((res) => {
-        console.log(res.data.status);
         if(res.data.status ==="Success"){
             navigate('/resetPassword')
         }

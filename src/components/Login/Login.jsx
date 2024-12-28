@@ -21,7 +21,6 @@ async  function handleSubmit(values){
   setLoading(true)
   axios.post('https://ecommerce.routemisr.com/api/v1/auth/signin',values)
   .then((res)=>{
-    console.log(res);
     setLoading(false)
     if (res.data.message == 'success')
       navigate('/')

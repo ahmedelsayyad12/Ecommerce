@@ -23,7 +23,7 @@ export default function ProductDetails() {
 
 
   const [loading, setLoading] = useState(false)
-  const [isClick , setIsClick] =useState(false)
+  // const [isClick , setIsClick] =useState(false)
   const [brand, setBrand] = useState({})
   const [category, setCategory] = useState({})
   const [productDetails, setProductDetails] = useState({})
@@ -51,7 +51,6 @@ export default function ProductDetails() {
       })
     }
     setIsLoading(false)
-    console.log(response);
     
   }
 
@@ -71,7 +70,6 @@ export default function ProductDetails() {
       setLoading(true)
       axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`)
       .then((res)=>{
-        console.log(res.data.data);
         setProductDetails(res.data.data)
         setBrand(res.data.data.brand)
         setCategory(res.data.data.category)
@@ -158,9 +156,9 @@ export default function ProductDetails() {
               Add To Cart</>}
             </button>
           </div>
-          <div className="heart-icon " onClick={()=>setIsClick(!isClick)}>
+          <div className="heart-icon " >
         {
-          isClick || IsFav ? <i className="fa-solid fa-heart text-3xl text-red-500 cursor-pointer
+          IsFav ? <i className="fa-solid fa-heart text-3xl text-red-500 cursor-pointer
           "></i> : <i onClick={()=>handelAddWish(id)} className="fa-solid fa-heart text-3xl text-gray-500 cursor-pointer
           "></i>
         }

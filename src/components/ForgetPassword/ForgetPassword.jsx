@@ -21,7 +21,6 @@ export default function ForgetPassword() {
     axios
       .post("https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords", values)
       .then((res) => {
-        console.log(res.data.statusMsg);
         if (res.data.statusMsg === 'success'){
             navigate('/verifyCode')
         }
