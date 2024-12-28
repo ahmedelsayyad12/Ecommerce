@@ -85,9 +85,9 @@ export default function Home() {
         </form>
       </div>
 
-      <div className="grid-row py-4">
+      <div className="flex flex-wrap py-4">
         {filteredData?.map((Product) => {
-          return <SingleProduct Product={Product} key={Product._id} />;
+          return <SingleProduct Product={Product} key={Product.id} />;
         })}
       </div>
     </>

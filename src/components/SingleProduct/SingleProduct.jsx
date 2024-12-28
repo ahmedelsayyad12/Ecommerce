@@ -67,7 +67,7 @@ export default function SingleProduct({ Product }) {
   }, [id]);
 
   return (
-    <div className="group col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 shadow-md rounded-lg p-2 hover:shadow-xl ">
+    <div className="group w-full md:w-6/12 lg:w-4/12 xl:w-3/12 shadow-md rounded-lg p-2 hover:shadow-xl ">
       <div className="upper relative overflow-hidden">
         <img src={imageCover} alt={title} className="w-full" />
 

@@ -30,10 +30,10 @@ export default function Brands() {
         {error}
       </div>
     ) : null}
-    <div className="grid-row">
+    <div className="flex flex-wrap py-4">
       
       {data?.data.data.map((Brands) => {
-        return <SingleBrand Brands={Brands} />;
+        return <SingleBrand Brands={Brands} key={Brands._id}/>;
       })}
   
     </div>

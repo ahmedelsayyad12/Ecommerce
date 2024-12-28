@@ -67,7 +67,7 @@ export default function Products() {
           </svg>
         </form>
       </div>
-      <div className="grid-row">
+      <div className="flex flex-wrap">
         {filteredData?.map((Product) => {
           return <SingleProduct Product={Product} />;
         })}

@@ -31,9 +31,9 @@ export default function Categories() {
         {error}
       </div>
     ) : null}
-    <div className="grid-row">
+    <div className="flex flex-wrap py-4">
       {data?.data.data.map((Category) => {
-        return <SingleCat category={Category} />;
+        return <SingleCat category={Category} key={Category.id}/>;
       })}
   
     </div>
