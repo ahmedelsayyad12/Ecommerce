@@ -16,7 +16,6 @@ export default function Signup() {
     
     let navigate = useNavigate()
 
-    useEffect(()=>{} ,[])
   async  function handleSubmit(values){
     setLoading(true)
     axios.post('https://ecommerce.routemisr.com/api/v1/auth/signup',values)
