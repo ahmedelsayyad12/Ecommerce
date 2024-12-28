@@ -22,7 +22,7 @@ export default function Signup() {
     .then((res)=>{
       setLoading(false)
       if (res.data.message == 'success')
-        navigate('/')
+        navigate('/login')
       localStorage.setItem('userToken',res.data.token)
       setToken(res.data.token)
     })
