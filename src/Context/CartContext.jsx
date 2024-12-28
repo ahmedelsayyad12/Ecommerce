@@ -76,7 +76,9 @@ let [cartUser, setCartUser] = useState(null);
     }
 
     useEffect(()=>{
-        getCart()
+        if(localStorage.getItem('userToken') !==null){
+            getCart()
+        }
     },[numOfCartItems])
 return <cartContext.Provider value={ {getCart ,setCartId,numOfCartItems, addProductToCart ,updateCartItemCount , deletedCartItem , clearCart , checkOut ,cartId , cartUser , setCartUser} }> 
     {props.children}

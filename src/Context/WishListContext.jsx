@@ -29,9 +29,7 @@ export default function WishListContextProvider(props){
     }
     
     
-    useEffect(() => {
-      getWishList()
-    }, [numOfWishList])
+    
 
     function addWish(productId){
         return axios.post(`https://ecommerce.routemisr.com/api/v1/wishlist`,
@@ -54,6 +52,13 @@ export default function WishListContextProvider(props){
 
     }
     
+
+    useEffect(() => {
+        if(localStorage.getItem('userToken') !==null){
+            getWishList()
+        }
+      }, [numOfWishList])
+
     return <wishListContext.Provider value={ { addWish ,getWishList, wishList ,numOfWishList ,removeFromList} }>
                 {props.children}
             </wishListContext.Provider>

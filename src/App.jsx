@@ -115,14 +115,14 @@ let routes = createBrowserRouter([
 function App() {
   return (
     <QueryClientProvider client={query}>
-      <WishListContextProvider>
-        <UserContextProvider>
+      <UserContextProvider>
+        <WishListContextProvider>
           <CartContextProvider>
             <RouterProvider router={routes}></RouterProvider>
             <Toaster position="top-center" />
           </CartContextProvider>
-        </UserContextProvider>
-      </WishListContextProvider>
+        </WishListContextProvider>
+      </UserContextProvider>
     </QueryClientProvider>
   );
 }
