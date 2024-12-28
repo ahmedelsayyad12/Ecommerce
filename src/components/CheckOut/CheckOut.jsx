@@ -21,7 +21,7 @@ export default function CheckOut() {
         "city":"",
     },
     validationSchema,
-    onSubmit:()=> handleCheckOut(cartId , 'http://localhost:5174'),
+    onSubmit:()=> handleCheckOut(cartId , 'http://ecommerce-mlyuaxhpw-ahmed-elsyaads-projects.vercel.app'),
     
 
   })
@@ -39,7 +39,6 @@ async  function handleCheckOut(cartId , url){
   if(response.data.status === 'success'){
     window.location.href = response.data.session.url
   }
-  console.log(response);
   
   }
   function validationSchema(){
