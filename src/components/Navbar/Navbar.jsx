@@ -39,9 +39,9 @@ export default function Navbar() {
               <li>
                 <NavLink to="categories"> Categories</NavLink>
               </li>
-              {/* <li>
+               <li>
                 <NavLink to="brands"> Brands</NavLink>
-              </li> */}
+             </li> 
               <li>
                 <NavLink to="allorders"> Orders</NavLink>
               </li>
